@@ -147,9 +147,9 @@
                         <th>Email</th>
                         <th>Age</th>
                         <th>Gender</th>
-                        <th>State</th>>
+                        <th>State</th>
                         <th>Hobby</th>
-
+                        <th>Action</th>
                     </thead>
                     <tbody id="users">
 
@@ -259,7 +259,15 @@
                                 <td>${person.age}</td>
                                 <td>${person.gender}</td>
                                 <td>${person.state}</td>
-                                <td>${person.hobby}</td></tr>`);
+                                <td>${person.hobby}</td>
+                                <td><button onclick="deleterowdata(this)" type="button" class="btn btn-danger" id="deleteSubmit">Delete</button></td>
+                                </tr>`);
+        }
+
+        function deleterowdata(button){
+            if(confirm("Are you sure you want to delete this row?")){
+                $(button).parent().parent().remove();
+            }
         }
     </script>
 </body>
