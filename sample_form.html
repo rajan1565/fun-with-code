@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample_form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <style>
+        .header {
+            color: blue;
+            font-style: 'Rowdies', cursive;
+            padding-left: 600px;
+            padding-bottom: 10px;
+            align-content: center;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Form Sample</a>
+        </nav>
+        <div class="row">
+            <div class="col-md-4">
+                <form>
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <label for="fnameInput"><b>Name:</b></label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="text" id="fnameInput" name="fname" value="" class="form-control">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="emailInput"><b>Email:</b></label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <input type="email" id="emailInput" name="Email" value="" class="form-control">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="ageInput"><b>Age:</b></label>
+                                </td>
+                                <td>
+                                    <input type="number" id="ageInput" name="ageInput" value="" class="form-control">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="Gender"><b>Gender:</b></label>
+                                </td>
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="male"
+                                            value="Male">
+                                        <label class="form-check-label" for="male">Male</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="female"
+                                            value="Female">
+                                        <label class="form-check-label" for="female">Female</label>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="stateSelect"><b>State:</b></label>
+                                </td>
+                                <td>
+                                    <div class="form-group">
+                                        <select name="state" id="stateSelect" class="form-control">
+                                            <option value="">--Select State--</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Goa">Goa</option>
+                                        </select>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="hobby"><b>Hobby:</b></label>
+                                </td>
+                                <td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Dance" name="hobby"
+                                            id="Dance">
+                                        <label class="form-check-label" for="Dance">
+                                            Dance
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Music" name="hobby"
+                                            id="Music">
+                                        <label class="form-check-label" for="Music">
+                                            Music
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" value="Movie" name="hobby"
+                                            id="Movie">
+                                        <label class="form-check-label" for="Movie">
+                                            Movie
+                                        </label>
+                                    </div>
+                                    <br>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button onclick="savedata()" type="button" class="btn btn-success" id="formSubmit">Submit</button>
+                    <button onclick="cleardata()" type="button" class="btn btn-light" id="formClear">Clear</button>
+
+                </form>
+            </div>
+            <div class="col-md-8">
+                <table class="table">
+                    <thead>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Hobby</th>
+
+                    </thead>
+                    <tbody id="users">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        function validateEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function cleardata() {
+            document.getElementById('fnameInput').value = document.getElementById('emailInput').value = document.getElementById('ageInput').value = '';
+
+            var e = document.getElementsByName("gender");
+            for (var i = 0; i < e.length; i++) {
+                e[i].checked = false;
+            }
+
+            var f = document.getElementsByName("hobby");
+            for (var i = 0; i < f.length; i++) {
+                f[i].checked = false;
+            }
+
+            document.getElementById('stateSelect').selectedIndex = 0;
+
+
+
+        }
+
+        function savedata() {
+            var name = document.getElementById('fnameInput').value;
+            console.log(name);
+            if (name == '') {
+                return alert("Please enter name");
+            }
+
+            var email = document.getElementById('emailInput').value;
+            console.log(email);
+            debugger;
+            if (email == '') {
+                return alert("Please enter email");
+            } else if (!validateEmail(email)) {
+                return alert("Please enter valid email");
+            }
+
+            var age = document.getElementById('ageInput').value;
+            console.log(age);
+            if (age == '') {
+                return alert("Please enter age");
+            }
+
+
+            var gender = '';
+            if (document.querySelector('input[name="gender"]:checked')) {
+                console.log(document.querySelector('input[name="gender"]:checked').value);
+                gender = document.querySelector('input[name="gender"]:checked').value;
+            }
+            if (gender == '') {
+                return alert("Please select gender");
+            }
+
+            var state = document.getElementById('stateSelect').value;
+            console.log(state);
+            if (state == '') {
+                return alert("Please select your state");
+            }
+
+
+
+            var checkedHobby = [];
+            var hobbyElements = document.getElementsByName('hobby');
+            for (var i = 0; hobbyElements[i]; ++i) {
+                if (hobbyElements[i].checked) {
+                    checkedHobby.push(hobbyElements[i].value);
+                }
+            }
+            if (checkedHobby.length == 0) {
+                return alert("Please select at least one hobby");
+            }
+
+            console.log(checkedHobby);
+
+            var person = {
+                name: name,
+                email: email,
+                age: age,
+                gender: gender,
+                state: state,
+                hobby: checkedHobby
+            }
+            console.log(person);
+
+            bindData(person);
+        }
+
+        function bindData(person) {
+            console.log(person);
+            $('#users').append(`<tr><td>${person.name}</td>
+                                <td>${person.email}</td>
+                                <td>${person.age}</td>
+                                <td>${person.gender}</td>
+                                <td>${person.hobby}</td></tr>`);
+        }
+    </script>
+</body>
+
+</html>
